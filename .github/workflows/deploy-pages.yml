@@ -32,7 +32,7 @@ jobs:
 
       - name: Upload Pages artifact
         id: upload-artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           path: 'dist'    # ensure build outputs to dist/
 
