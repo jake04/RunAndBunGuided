@@ -106,21 +106,7 @@ window.ENCOUNTER_DATA = {
   ],
   "encounters": {
     "Starter": {
-      "Other": [
-        {
-          "level": "5",
-          "pokemon": "Turtwig"
-        },
-        {
-          "level": "5",
-          "pokemon": "Piplup"
-        },
-        {
-          "level": "5",
-          "pokemon": "Chimchar"
-        }
-      ]
-    },
+          },
     "Littleroot Town": {
       "Fish": [
         {
@@ -200,30 +186,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Sobble",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Weedle",
-          "pokemon": "Pidgey",
-          "percent": "Squirtle"
-        },
-        {
-          "level": "Kakuna",
-          "pokemon": "Pidgeotto",
-          "percent": "Wartortle"
-        },
-        {
-          "level": "Beedrill",
-          "pokemon": "Pidgeot",
-          "percent": "Blastoise"
-        }
       ]
-    },
+          },
     "Route 101": {
       "Land": [
         {
@@ -286,25 +250,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Deerling-A",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Pikachu",
-          "pokemon": "Sandshrew-A",
-          "percent": ""
-        },
-        {
-          "level": "Raichu",
-          "pokemon": "Sandslash-A",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Oldale Town": {
       "Land": [
         {
@@ -367,30 +314,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Litleo",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Nidoran-M",
-          "pokemon": "Clefairy",
-          "percent": ""
-        },
-        {
-          "level": "Nidorino",
-          "pokemon": "Clefable",
-          "percent": ""
-        },
-        {
-          "level": "Nidoking",
-          "pokemon": "Cleffa",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 103": {
       "Land": [
         {
@@ -532,25 +457,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Ludicolo",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Paras",
-          "pokemon": "Meowth-G",
-          "percent": ""
-        },
-        {
-          "level": "Parasect",
-          "pokemon": "Perrserker",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 102": {
       "Land": [
         {
@@ -692,30 +600,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Floatzel",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Growlithe",
-          "pokemon": "Abra",
-          "percent": "Growlithe-H"
-        },
-        {
-          "level": "Arcanine",
-          "pokemon": "Kadabra",
-          "percent": "Arcanine-H"
-        },
-        {
-          "level": "FALSE",
-          "pokemon": "Alakazam",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Petalburg City": {
       "Fish": [
         {
@@ -795,30 +681,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Popplio",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Tentacool",
-          "pokemon": "Geodude-A",
-          "percent": ""
-        },
-        {
-          "level": "Tentacruel",
-          "pokemon": "Graveler-A",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Golem-A",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 104": {
       "Land": [
         {
@@ -960,30 +824,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Kingdra",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Slowpoke",
-          "pokemon": "Magnemite",
-          "percent": ""
-        },
-        {
-          "level": "Slowbro",
-          "pokemon": "Magneton",
-          "percent": ""
-        },
-        {
-          "level": "Slowking",
-          "pokemon": "Magnezone",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Dewford Town": {
       "Land": [
         {
@@ -1125,25 +967,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Wailord",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Grimer-A",
-          "pokemon": "Shellder",
-          "percent": ""
-        },
-        {
-          "level": "Muk-A",
-          "pokemon": "Cloyster",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 107": {
       "Fish": [
         {
@@ -1223,25 +1048,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Wailord",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Onix",
-          "pokemon": "Drowzee",
-          "percent": ""
-        },
-        {
-          "level": "Steelix",
-          "pokemon": "Hypno",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 106": {
       "Fish": [
         {
@@ -1321,30 +1129,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Wailord",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Voltorb-H",
-          "pokemon": "Exeggcute",
-          "percent": ""
-        },
-        {
-          "level": "Electrode-H",
-          "pokemon": "Exeggutor",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Exeggutor-A",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Granite Cave 1F": {
       "Land": [
         {
@@ -1407,30 +1193,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Sandile",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Koffing",
-          "pokemon": "Rhyhorn",
-          "percent": ""
-        },
-        {
-          "level": "Weezing",
-          "pokemon": "Rhydon",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Rhyperior",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Granite Cave B1F": {
       "Land": [
         {
@@ -1493,25 +1257,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Sandshrew-A",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Horsea",
-          "pokemon": "Staryu",
-          "percent": ""
-        },
-        {
-          "level": "Seadra",
-          "pokemon": "Starmie",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Granite Cave B2F": {
       "Land": [
         {
@@ -1601,30 +1348,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Bergmite",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Jynx",
-          "pokemon": "Electabuzz",
-          "percent": ""
-        },
-        {
-          "level": "Smoochum",
-          "pokemon": "Elekid",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Electivire",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Steven's Room": {
       "Land": [
         {
@@ -1687,20 +1412,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Drowzee",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Pinsir",
-          "pokemon": "Tauros",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 109": {
       "Fish": [
         {
@@ -1780,25 +1493,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Carracosta",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Porygon",
-          "pokemon": "Omanyte",
-          "percent": ""
-        },
-        {
-          "level": "Porygon2",
-          "pokemon": "Omastar",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Slateport City": {
       "Fish": [
         {
@@ -1878,30 +1574,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Slowking",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Aerodactyl",
-          "pokemon": "Dratini",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Dragonair",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Dragonite",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 110": {
       "Land": [
         {
@@ -2043,30 +1717,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Eelektross",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Chikorita",
-          "pokemon": "Cyndaquil",
-          "percent": ""
-        },
-        {
-          "level": "Bayleef",
-          "pokemon": "Quilava",
-          "percent": ""
-        },
-        {
-          "level": "Meganium",
-          "pokemon": "Typhlosion",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Petalburg Woods": {
       "Land": [
         {
@@ -2129,25 +1781,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Deerling-W",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Ledyba",
-          "pokemon": "Chinchou",
-          "percent": ""
-        },
-        {
-          "level": "Ledian",
-          "pokemon": "Lanturn",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Rustboro City": {
       "Land": [
         {
@@ -2210,85 +1845,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Stantler",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "Fossil",
-          "pokemon": "Omanyte",
-          "percent": "9%"
-        },
-        {
-          "level": "Fossil",
-          "pokemon": "Kabuto",
-          "percent": "9%"
-        },
-        {
-          "level": "Fossil",
-          "pokemon": "Aerodactyl",
-          "percent": "9%"
-        },
-        {
-          "level": "Fossil",
-          "pokemon": "Lileep",
-          "percent": "9%"
-        },
-        {
-          "level": "Fossil",
-          "pokemon": "Anorith",
-          "percent": "9%"
-        },
-        {
-          "level": "Fossil",
-          "pokemon": "Cranidos",
-          "percent": "9%"
-        },
-        {
-          "level": "Fossil",
-          "pokemon": "Shieldon",
-          "percent": "9%"
-        },
-        {
-          "level": "Fossil",
-          "pokemon": "Tirtouga",
-          "percent": "9%"
-        },
-        {
-          "level": "Fossil",
-          "pokemon": "Archen",
-          "percent": "9%"
-        },
-        {
-          "level": "Fossil",
-          "pokemon": "Tyrunt",
-          "percent": "9%"
-        },
-        {
-          "level": "Fossil",
-          "pokemon": "Amaura",
-          "percent": "9%"
-        },
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Natu",
-          "pokemon": "Mareep",
-          "percent": ""
-        },
-        {
-          "level": "Xatu",
-          "pokemon": "Flaaffy",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Ampharos",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 115": {
       "Land": [
         {
@@ -2430,25 +1988,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Gyarados",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Aipom",
-          "pokemon": "Yanma",
-          "percent": ""
-        },
-        {
-          "level": "Ambipom",
-          "pokemon": "Yanmega",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 116": {
       "Land": [
         {
@@ -2511,25 +2052,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Nidoran-M",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Gligar",
-          "pokemon": "Snubbull",
-          "percent": ""
-        },
-        {
-          "level": "Gliscor",
-          "pokemon": "Granbull",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Rusturf Tunnel": {
       "Land": [
         {
@@ -2592,35 +2116,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Roggenrola",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Heracross",
-          "pokemon": "Sneasel",
-          "percent": "Qwilfish-H"
-        },
-        {
-          "level": "",
-          "pokemon": "Weavile",
-          "percent": "Overqwil"
-        },
-        {
-          "level": "",
-          "pokemon": "FALSE",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "FALSE",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Verdanturf Town": {
       "Land": [
         {
@@ -2683,154 +2180,10 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Breloom",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Swinub",
-          "pokemon": "Remoraid",
-          "percent": "Sneasel-H"
-        },
-        {
-          "level": "Piloswine",
-          "pokemon": "Octillery",
-          "percent": "Sneasler"
-        }
       ]
-    },
+          },
     "Mauville City": {
-      "Other": [
-        {
-          "level": "Badge 1",
-          "pokemon": "Smoochum",
-          "percent": "33%"
-        },
-        {
-          "level": "Badge 1",
-          "pokemon": "Elekid",
-          "percent": "33%"
-        },
-        {
-          "level": "Badge 1",
-          "pokemon": "Magby",
-          "percent": "33%"
-        },
-        {
-          "level": "Badge 2",
-          "pokemon": "Tauros",
-          "percent": "50%"
-        },
-        {
-          "level": "Badge 2",
-          "pokemon": "Miltank",
-          "percent": "50%"
-        },
-        {
-          "level": "Badge 3",
-          "pokemon": "Throh",
-          "percent": "50%"
-        },
-        {
-          "level": "Badge 3",
-          "pokemon": "Sawk",
-          "percent": "50%"
-        },
-        {
-          "level": "Badge 4",
-          "pokemon": "Pinsir",
-          "percent": "50%"
-        },
-        {
-          "level": "Badge 4",
-          "pokemon": "Heracross",
-          "percent": "50%"
-        },
-        {
-          "level": "Badge 5",
-          "pokemon": "Larvitar",
-          "percent": "50%"
-        },
-        {
-          "level": "Badge 5",
-          "pokemon": "Beldum",
-          "percent": "50%"
-        },
-        {
-          "level": "Badge 6",
-          "pokemon": "Dratini",
-          "percent": "33%"
-        },
-        {
-          "level": "Badge 6",
-          "pokemon": "Bagon",
-          "percent": "33%"
-        },
-        {
-          "level": "Badge 6",
-          "pokemon": "Deino",
-          "percent": "33%"
-        },
-        {
-          "level": "Badge 7",
-          "pokemon": "Gible",
-          "percent": "25%"
-        },
-        {
-          "level": "Badge 7",
-          "pokemon": "Goomy",
-          "percent": "25%"
-        },
-        {
-          "level": "Badge 7",
-          "pokemon": "Jangmo-o",
-          "percent": "25%"
-        },
-        {
-          "level": "Badge 7",
-          "pokemon": "Dreepy",
-          "percent": "25%"
-        },
-        {
-          "level": "Badge 8",
-          "pokemon": "Mew",
-          "percent": "25%"
-        },
-        {
-          "level": "Badge 8",
-          "pokemon": "Celebi",
-          "percent": "25%"
-        },
-        {
-          "level": "Badge 8",
-          "pokemon": "Jirachi",
-          "percent": "25%"
-        },
-        {
-          "level": "Badge 8",
-          "pokemon": "Victini",
-          "percent": "25%"
-        },
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Phanpy",
-          "pokemon": "Stantler",
-          "percent": ""
-        },
-        {
-          "level": "Donphan",
-          "pokemon": "Wyrdeer",
-          "percent": ""
-        }
-      ]
-    },
+          },
     "Route 117": {
       "Land": [
         {
@@ -2972,20 +2325,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Lanturn",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Larvitar",
-          "pokemon": "Celebi",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 111": {
       "Land": [
         {
@@ -3154,30 +2495,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Dwebble",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Torchic",
-          "pokemon": "Mudkip",
-          "percent": ""
-        },
-        {
-          "level": "Combusken",
-          "pokemon": "Marshtomp",
-          "percent": ""
-        },
-        {
-          "level": "Blaziken",
-          "pokemon": "Swampert",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 118": {
       "Land": [
         {
@@ -3319,30 +2638,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Gyarados",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Zigzagoon-G",
-          "pokemon": "Lotad",
-          "percent": ""
-        },
-        {
-          "level": "Linoone-G",
-          "pokemon": "Lombre",
-          "percent": ""
-        },
-        {
-          "level": "Obstagoon",
-          "pokemon": "Ludicolo",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Altering Cave": {
       "Land": [
         {
@@ -3405,25 +2702,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Torkoal",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Ralts",
-          "pokemon": "Surskit",
-          "percent": ""
-        },
-        {
-          "level": "Kirlia",
-          "pokemon": "Masquerain",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Mirage Tower 1F": {
       "Land": [
         {
@@ -3486,25 +2766,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Duosion",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Makuhita",
-          "pokemon": "Nosepass",
-          "percent": ""
-        },
-        {
-          "level": "Hariyama",
-          "pokemon": "Probopass",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Mirage Tower 2F": {
       "Land": [
         {
@@ -3567,20 +2830,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Hatterene",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Sableye",
-          "pokemon": "Mawile",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Mirage Tower 3F": {
       "Land": [
         {
@@ -3643,25 +2894,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Noivern",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Meditite",
-          "pokemon": "Electrike",
-          "percent": ""
-        },
-        {
-          "level": "Medicham",
-          "pokemon": "Manectric",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Mirage Tower 4F": {
       "Land": [
         {
@@ -3724,25 +2958,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Claydol",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Carvanha",
-          "pokemon": "Wailmer",
-          "percent": ""
-        },
-        {
-          "level": "Sharpedo",
-          "pokemon": "Wailord",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 113": {
       "Land": [
         {
@@ -3805,20 +3022,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Toxtricity",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Torkoal",
-          "pokemon": "Spinda",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Fallarbor Town": {
       "Land": [
         {
@@ -3881,25 +3086,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Scyther",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Swablu",
-          "pokemon": "Corphish",
-          "percent": ""
-        },
-        {
-          "level": "Altaria",
-          "pokemon": "Crawdaunt",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Desert Underpass": {
       "Land": [
         {
@@ -3962,25 +3150,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Druddigon",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Lileep",
-          "pokemon": "Anorith",
-          "percent": ""
-        },
-        {
-          "level": "Cradily",
-          "pokemon": "Armaldo",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 114": {
       "Land": [
         {
@@ -4149,20 +3320,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Graveler-A",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Castform",
-          "pokemon": "Kecleon",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Meteor Falls 1F1": {
       "Land": [
         {
@@ -4304,30 +3463,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Cradily",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Absol",
-          "pokemon": "Snorunt",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Glalie",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Froslass",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Meteor Falls 1F2": {
       "Land": [
         {
@@ -4469,20 +3606,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Cradily",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Clamperl",
-          "pokemon": "Relicanth",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Meteor Falls B1F1": {
       "Land": [
         {
@@ -4624,20 +3749,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Dragonite",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Beldum",
-          "pokemon": "Regirock",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Meteor Falls B1F2": {
       "Land": [
         {
@@ -4779,20 +3892,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Dragonite",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Registeel",
-          "pokemon": "Latias",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 112": {
       "Land": [
         {
@@ -4855,30 +3956,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Weezing",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Jirachi",
-          "pokemon": "Turtwig",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Grotle",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Torterra",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Fiery Path": {
       "Land": [
         {
@@ -4941,30 +4020,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Magmortar",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Piplup",
-          "pokemon": "Starly",
-          "percent": ""
-        },
-        {
-          "level": "Prinplup",
-          "pokemon": "Staravia",
-          "percent": ""
-        },
-        {
-          "level": "Empoleon",
-          "pokemon": "Staraptor",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Mt. Chimney": {
       "Land": [
         {
@@ -5027,25 +4084,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Hakomo-o",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Cranidos",
-          "pokemon": "Shieldon",
-          "percent": ""
-        },
-        {
-          "level": "Rampardos",
-          "pokemon": "Bastiodon",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Jagged Pass": {
       "Land": [
         {
@@ -5108,69 +4148,10 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Gabite",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Buizel",
-          "pokemon": "Shellos",
-          "percent": ""
-        },
-        {
-          "level": "Floatzel",
-          "pokemon": "Gastrodon",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Shellos-East",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Shellos-West",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Lavaridge Town": {
-      "Other": [
-        {
-          "level": "Egg",
-          "pokemon": "Treecko",
-          "percent": ""
-        },
-        {
-          "level": "Egg",
-          "pokemon": "Torchic",
-          "percent": ""
-        },
-        {
-          "level": "Egg",
-          "pokemon": "Mudkip",
-          "percent": ""
-        },
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Buneary",
-          "pokemon": "Stunky",
-          "percent": ""
-        },
-        {
-          "level": "Lopunny",
-          "pokemon": "Skuntank",
-          "percent": ""
-        }
-      ]
-    },
+          },
     "Route 134": {
       "Fish": [
         {
@@ -5250,25 +4231,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Sharpedo",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Gible",
-          "pokemon": "Riolu",
-          "percent": ""
-        },
-        {
-          "level": "Gabite",
-          "pokemon": "Lucario",
-          "percent": ""
-        }
       ]
-    },
+          },
     "New Mauville (Outside)": {
       "Land": [
         {
@@ -5331,20 +4295,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Metang",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Croagunk",
-          "pokemon": "Carnivine",
-          "percent": ""
-        }
       ]
-    },
+          },
     "New Mauville (Inside)": {
       "Land": [
         {
@@ -5407,30 +4359,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Electivire",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "40",
-          "pokemon": "Voltorb-H",
-          "percent": ""
-        },
-        {
-          "level": "50",
-          "pokemon": "Electrode-H",
-          "percent": ""
-        },
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Snover",
-          "pokemon": "Cresselia",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 105": {
       "Land": [
         {
@@ -5572,30 +4502,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Dratini",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Snivy",
-          "pokemon": "Tepig",
-          "percent": ""
-        },
-        {
-          "level": "Servine",
-          "pokemon": "Pignite",
-          "percent": ""
-        },
-        {
-          "level": "Serperior",
-          "pokemon": "Emboar",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 108": {
       "Fish": [
         {
@@ -5675,25 +4583,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Barraskewda",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Lillipup",
-          "pokemon": "Munna",
-          "percent": ""
-        },
-        {
-          "level": "Herdier",
-          "pokemon": "Musharna",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Abandoned Ship B1F Rooms": {
       "Fish": [
         {
@@ -5773,20 +4664,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Lanturn",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Drilbur",
-          "pokemon": "Audino",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 119": {
       "Land": [
         {
@@ -5928,54 +4807,10 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Jellicent",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "25",
-          "pokemon": "Castform",
-          "percent": ""
-        },
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Tympole",
-          "pokemon": "Throh",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Fortree City": {
-      "Other": [
-        {
-          "level": "55",
-          "pokemon": "Kecleon",
-          "percent": ""
-        },
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Venipede",
-          "pokemon": "Petilil",
-          "percent": ""
-        },
-        {
-          "level": "Whirlipede",
-          "pokemon": "Lilligant",
-          "percent": ""
-        },
-        {
-          "level": "Scolipede",
-          "pokemon": "Lilligant-H",
-          "percent": ""
-        }
-      ]
-    },
+          },
     "Route 120": {
       "Land": [
         {
@@ -6117,25 +4952,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Muk-A",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "55",
-          "pokemon": "Kecleon",
-          "percent": ""
-        },
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Sandile",
-          "pokemon": "Maractus",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Scorched Slab": {
       "Land": [
         {
@@ -6277,25 +5095,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Noivern",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Sigilyph",
-          "pokemon": "Tirtouga",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Carracosta",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 121": {
       "Land": [
         {
@@ -6358,30 +5159,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Kleavor",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Zorua",
-          "pokemon": "Solosis",
-          "percent": "Zorua-H"
-        },
-        {
-          "level": "Zoroark",
-          "pokemon": "Duosion",
-          "percent": "Zoroark-H"
-        },
-        {
-          "level": "FALSE",
-          "pokemon": "Reuniclus",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Safari Zone (South)": {
       "Land": [
         {
@@ -6444,25 +5223,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Venusaur",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Karrablast",
-          "pokemon": "Foongus",
-          "percent": ""
-        },
-        {
-          "level": "Escavalier",
-          "pokemon": "Amoonguss",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Safari Zone (Southwest)": {
       "Land": [
         {
@@ -6604,25 +5366,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Vivillon-Sun",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Joltik",
-          "pokemon": "Ferroseed",
-          "percent": ""
-        },
-        {
-          "level": "Galvantula",
-          "pokemon": "Ferrothorn",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Safari Zone (Northwest)": {
       "Land": [
         {
@@ -6764,20 +5509,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Froakie",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Litwick",
-          "pokemon": "Cryogonal",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Safari Zone (North)": {
       "Land": [
         {
@@ -6867,25 +5600,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Glalie",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Stunfisk",
-          "pokemon": "Mienfoo",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Mienshao",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Lilycove City": {
       "Land": [
         {
@@ -7027,20 +5743,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Dragonite",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Pawniard",
-          "pokemon": "Durant",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 122": {
       "Fish": [
         {
@@ -7120,20 +5824,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Dreepy",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Larvesta",
-          "pokemon": "Tornadus",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 123": {
       "Land": [
         {
@@ -7275,30 +5967,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Slowking",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Landorus",
-          "pokemon": "Chespin",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Quilladin",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Chesnaught",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Mt. Pyre 1F-2F": {
       "Land": [
         {
@@ -7361,25 +6031,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Froslass",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Froakie",
-          "pokemon": "Bunnelby",
-          "percent": ""
-        },
-        {
-          "level": "Frogadier",
-          "pokemon": "Diggersby",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Mt. Pyre 3F-4F": {
       "Land": [
         {
@@ -7442,25 +6095,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Froslass",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Scatterbug",
-          "pokemon": "Litleo",
-          "percent": ""
-        },
-        {
-          "level": "Spewpa",
-          "pokemon": "Pyroar",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Mt. Pyre 5F-6F": {
       "Land": [
         {
@@ -7523,25 +6159,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Gallade",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Pancham",
-          "pokemon": "Skrelp",
-          "percent": ""
-        },
-        {
-          "level": "Pangoro",
-          "pokemon": "Dragalge",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Mt. Pyre (Exterior)": {
       "Land": [
         {
@@ -7604,25 +6223,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Pumpkaboo",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Tyrunt",
-          "pokemon": "Amaura",
-          "percent": ""
-        },
-        {
-          "level": "Tyrantrum",
-          "pokemon": "Aurorus",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Mt. Pyre (Summit)": {
       "Land": [
         {
@@ -7685,25 +6287,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Drakloak",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Goomy",
-          "pokemon": "Phantump",
-          "percent": ""
-        },
-        {
-          "level": "Sliggoo",
-          "pokemon": "Trevenant",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Magma Hideout 1": {
       "Land": [
         {
@@ -7766,25 +6351,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Combusken",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Bergmite",
-          "pokemon": "Noibat",
-          "percent": ""
-        },
-        {
-          "level": "Avalugg",
-          "pokemon": "Noivern",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Magma Hideout 2-4": {
       "Land": [
         {
@@ -7847,30 +6415,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Charmeleon",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Litten",
-          "pokemon": "Popplio",
-          "percent": ""
-        },
-        {
-          "level": "Torracat",
-          "pokemon": "Brionne",
-          "percent": ""
-        },
-        {
-          "level": "Incineroar",
-          "pokemon": "Primarina",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Magma Hideout 5": {
       "Land": [
         {
@@ -7933,25 +6479,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Shelgon",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Rockruff",
-          "pokemon": "Mudbray",
-          "percent": ""
-        },
-        {
-          "level": "Lycanroc",
-          "pokemon": "Mudsdale",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Magma Hideout 6-7": {
       "Land": [
         {
@@ -8014,49 +6543,10 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Quilava",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Morelull",
-          "pokemon": "Salandit",
-          "percent": ""
-        },
-        {
-          "level": "Shiinotic",
-          "pokemon": "Salazzle",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Aqua Hideout B1F": {
-      "Other": [
-        {
-          "level": "75",
-          "pokemon": "Electrode-H",
-          "percent": ""
-        },
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Bounsweet",
-          "pokemon": "Wimpod",
-          "percent": ""
-        },
-        {
-          "level": "Steenee",
-          "pokemon": "Golisopod",
-          "percent": ""
-        }
-      ]
-    },
+          },
     "Route 124": {
       "Fish": [
         {
@@ -8136,20 +6626,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Overqwil",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Togedemaru",
-          "pokemon": "Bruxish",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Mossdeep City": {
       "Fish": [
         {
@@ -8229,35 +6707,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Lanturn",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "5",
-          "pokemon": "Kubfu",
-          "percent": ""
-        },
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Jangmo-o",
-          "pokemon": "Grookey",
-          "percent": ""
-        },
-        {
-          "level": "Hakamo-o",
-          "pokemon": "Thwackey",
-          "percent": ""
-        },
-        {
-          "level": "Kommo-o",
-          "pokemon": "Rillaboom",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 125": {
       "Fish": [
         {
@@ -8337,30 +6788,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Starmie",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Sobble",
-          "pokemon": "Rookidee",
-          "percent": ""
-        },
-        {
-          "level": "Drizzile",
-          "pokemon": "Corvisquire",
-          "percent": ""
-        },
-        {
-          "level": "Inteleon",
-          "pokemon": "Corviknight",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Shoal Cave (Entrance/Inner)": {
       "Land": [
         {
@@ -8502,25 +6931,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Starmie",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Gossifleur",
-          "pokemon": "Chewtle",
-          "percent": ""
-        },
-        {
-          "level": "Eldegoss",
-          "pokemon": "Drednaw",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Shoal Cave (Other)": {
       "Land": [
         {
@@ -8583,30 +6995,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Grimmsnarl",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Arrokuda",
-          "pokemon": "Toxel",
-          "percent": ""
-        },
-        {
-          "level": "Barraskewda",
-          "pokemon": "Toxtricity",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Toxtricity-Low-Key",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Shoal Cave (Ice)": {
       "Land": [
         {
@@ -8669,30 +7059,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Jynx",
           "percent": "1%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Hatenna",
-          "pokemon": "Impidimp",
-          "percent": ""
-        },
-        {
-          "level": "Hattrem",
-          "pokemon": "Morgrem",
-          "percent": ""
-        },
-        {
-          "level": "Hatterene",
-          "pokemon": "Grimmsnarl",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 127": {
       "Land": [
         {
@@ -8834,30 +7202,8 @@ window.ENCOUNTER_DATA = {
           "pokemon": "Milotic",
           "percent": "10%"
         }
-      ],
-      "Other": [
-        {
-          "level": "0",
-          "pokemon": "0",
-          "percent": "0"
-        },
-        {
-          "level": "Duraludon",
-          "pokemon": "Dreepy",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Drakloak",
-          "percent": ""
-        },
-        {
-          "level": "",
-          "pokemon": "Dragapult",
-          "percent": ""
-        }
       ]
-    },
+          },
     "Route 126": {
       "Fish": [
         {
