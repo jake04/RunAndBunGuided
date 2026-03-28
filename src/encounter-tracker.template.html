@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/RunAndBunGuided/">
+    <meta charset="UTF-8" />
+    <title>Encounter Tracker &mdash; Run &amp; Bun Guided</title>
+    <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?" />
+    <link type="text/css" rel="stylesheet" href="./css/dark-theme.css" id="dark-theme-styles">
+    <script>
+        /*
+        * localStorage will only store strings.
+        * This means that if it has the value 'false',
+        * it will be truey and incorrectly cause the dark theme to load.
+        */
+        if (localStorage.getItem('darkTheme') !== 'true') {
+            document.getElementById('dark-theme-styles').disabled = true;
+        }
+    </script>
+</head>
+
+<body class="dark-theme">
+
+<div class="header"><div class="header-inner">
+    <ul class="nav">
+        <li><a class="button nav-first" href="//pokemonshowdown.com"><img src="./img/pokemonshowdownbeta.png" alt="Pok&eacute;mon Showdown! (beta)" /> Home</a></li>
+        <li><a class="button" href="//dex.pokemonshowdown.com">Pok&eacute;dex</a></li>
+        <li><a class="button" href="//replay.pokemonshowdown.com/">Replays</a></li>
+        <li><a class="button" href="//pokemonshowdown.com/ladder/">Ladder</a></li>
+        <li><a class="button nav-last" href="//pokemonshowdown.com/forums/">Forum</a></li>
+    </ul>
+    <ul class="nav nav-play">
+        <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
+    </ul>
+    <div style="clear:both"></div>
+</div></div>
+
+<div class="wrapper">
+
+    <div class="app-tabs">
+        <a class="app-tab" href="./honkalculate.html">&#9876; Damage Calculator</a>
+        <a class="app-tab active" href="./encounter-tracker.html">&#128197; Encounter Tracker</a>
+    </div>
+
+    <div class="tracker-container">
+
+        <!-- Route navigation bar -->
+        <div class="tracker-nav">
+            <button class="btn btn-small" id="prev-route-btn" onclick="navigateRoute(-1)">&#8592; Prev</button>
+            <select id="route-select" class="tracker-route-select"></select>
+            <button class="btn btn-small" id="next-route-btn" onclick="navigateRoute(1)">Next &#8594;</button>
+            <span class="tracker-catch-counter" id="catch-counter"></span>
+        </div>
+
+        <!-- Current route header -->
+        <div class="tracker-route-header">
+            <span class="tracker-route-name" id="current-route-name"></span>
+            <span class="tracker-selected-display" id="selected-display"></span>
+        </div>
+
+        <!-- Encounter tables (rendered by JS) -->
+        <div id="encounter-content"></div>
+
+        <!-- Route progress strip -->
+        <div class="tracker-progress-section">
+            <div class="tracker-progress-label">Route Progress</div>
+            <div class="route-progress-strip" id="progress-strip"></div>
+        </div>
+
+    </div>
+
+    <div style="clear:both;padding:20px;text-align:left">Created by Honko, maintained by Austin and Kris
+        <ul><li><a href="https://github.com/smogon/damage-calc/contributors" class="links-lighten" target="_blank">Contributors</a></li>
+            <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" class="links-lighten" target="_blank">Bug Reports</a></li>
+            <li><a href="https://github.com/smogon/damage-calc" class="links-lighten" target="_blank">GitHub repository</a></li></ul>
+            <button type="button" id="dark-theme-toggle"></button>
+            <script type="text/javascript" src="./js/dark-theme-toggle.js?"></script>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="./js/vendor/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/data/encounters.js?"></script>
+<script type="text/javascript" src="./js/encounter_tracker.js?"></script>
+
+</body>
+</html>

@@ -479,6 +479,261 @@ button svg {
     background: #218838;
 }
 
+/* ── Encounter Tracker ──────────────────────────────────────────────────── */
+
+.app-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 6px;
+}
+
+.app-tab {
+    padding: 6px 16px;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+    color: inherit;
+    background: #2a2a2a;
+    border: 1px solid #555;
+    border-bottom: none;
+    font-size: 13px;
+    transition: background 0.15s;
+}
+
+.app-tab:hover {
+    background: #3a3a3a;
+    text-decoration: none;
+    color: inherit;
+}
+
+.app-tab.active {
+    background: #1b6ec2;
+    color: #fff;
+    font-weight: bold;
+    border-color: #1b6ec2;
+}
+
+.tracker-container {
+    padding: 8px 0 24px;
+    max-width: 900px;
+}
+
+.tracker-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.tracker-route-select {
+    flex: 1;
+    min-width: 180px;
+    max-width: 340px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    border: 1px solid #666;
+    font-size: 14px;
+}
+
+.tracker-catch-counter {
+    margin-left: auto;
+    font-size: 13px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+.tracker-route-header {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.tracker-route-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tracker-selected-display {
+    font-size: 14px;
+}
+
+.tracker-selected-display.has-selection {
+    color: #6dbf67;
+}
+
+.tracker-selected-display.no-selection {
+    color: #888;
+    font-style: italic;
+}
+
+.tracker-selected-name {
+    color: #6dbf67;
+}
+
+.encounter-category-section {
+    margin-bottom: 18px;
+}
+
+.encounter-category-header {
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 4px 4px 0 0;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.encounter-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.encounter-table thead th {
+    padding: 5px 10px;
+    text-align: left;
+    font-size: 12px;
+    color: #aaa;
+    border-bottom: 1px solid #444;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.encounter-table tbody tr {
+    border-bottom: 1px solid #313131;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.encounter-table tbody tr:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+.encounter-table tbody tr.encounter-selected {
+    background: rgba(109, 191, 103, 0.18);
+}
+
+.encounter-table tbody tr.encounter-selected:hover {
+    background: rgba(109, 191, 103, 0.26);
+}
+
+.encounter-table td {
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+
+.enc-pct {
+    width: 44px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.enc-level {
+    width: 70px;
+    color: #ccc;
+}
+
+.enc-pokemon {
+    font-weight: 500;
+}
+
+.enc-btn {
+    width: 36px;
+    text-align: center;
+}
+
+.encounter-select-btn {
+    background: none;
+    border: 1px solid #555;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    padding: 0;
+}
+
+.encounter-select-btn:hover {
+    border-color: #6dbf67;
+    color: #6dbf67;
+}
+
+.encounter-select-btn.selected {
+    background: #6dbf67;
+    border-color: #6dbf67;
+    color: #fff;
+    font-size: 14px;
+}
+
+.tracker-empty {
+    color: #777;
+    font-style: italic;
+    padding: 12px 0;
+}
+
+.tracker-progress-section {
+    margin-top: 28px;
+    padding-top: 14px;
+    border-top: 1px solid #333;
+}
+
+.tracker-progress-label {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+}
+
+.route-progress-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.route-progress-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.1s;
+    flex-shrink: 0;
+}
+
+.route-progress-dot:hover {
+    transform: scale(1.4);
+    opacity: 0.9;
+}
+
+.route-progress-dot.caught {
+    background: #6dbf67;
+}
+
+.route-progress-dot.empty {
+    background: #444;
+    border: 1px solid #555;
+}
+
+.route-progress-dot.current {
+    outline: 2px solid #fff;
+    outline-offset: 1px;
+}
+
 .range-delete-move {
     cursor: pointer;
     background: #ff4444;
