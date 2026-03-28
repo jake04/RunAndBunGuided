@@ -30,11 +30,23 @@ jobs:
       - name: Build
         run: node build
 
+      - name: Verify index.html exists
+        run: |
+          if [ -f dist/index.html ]; then
+            echo "✓ dist/index.html found"
+            ls -la dist/ | head -20
+          else
+            echo "✗ dist/index.html NOT found"
+            exit 1
+          fi
+
       - name: Upload Pages artifact
         id: upload-artifact
         uses: actions/upload-artifact@v4
         with:
-          path: 'dist'    # ensure build outputs to dist/
+          name: github-pages
+          path: 'dist'
+          retention-days: 1
 
   deploy:
     needs: build
@@ -42,6 +54,10 @@ jobs:
     permissions:
       pages: write
       id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v3
