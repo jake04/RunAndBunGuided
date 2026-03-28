@@ -123,6 +123,41 @@
 
     // ── Route renderer ────────────────────────────────────────────────────────
 
+    // Collapse duplicate Pokémon entries within a category, summing percentages and merging level ranges.
+    function deduplicateEntries(entries) {
+        var seen = {};   // pokemon name -> { pctSum, levels: Set }
+        var order = [];
+        for (var i = 0; i < entries.length; i++) {
+            var e = entries[i];
+            var name = e.pokemon;
+            var pct = parseInt(e.percent) || 0;
+            var lvl = String(e.level || '');
+            if (!seen[name]) {
+                seen[name] = { pctSum: pct, levels: [lvl] };
+                order.push(name);
+            } else {
+                seen[name].pctSum += pct;
+                if (lvl && seen[name].levels.indexOf(lvl) === -1) seen[name].levels.push(lvl);
+            }
+        }
+        return order.map(function (name) {
+            var d = seen[name];
+            // Merge level strings: collect all unique numbers, build a compact range
+            var nums = [];
+            d.levels.forEach(function (lvlStr) {
+                lvlStr.split(/[-–,\s]+/).forEach(function (n) { var v = parseInt(n); if (!isNaN(v)) nums.push(v); });
+            });
+            nums = nums.filter(function (v, i, a) { return a.indexOf(v) === i; }).sort(function (a, b) { return a - b; });
+            var levelDisplay = '';
+            if (nums.length === 1) {
+                levelDisplay = String(nums[0]);
+            } else if (nums.length > 1) {
+                levelDisplay = nums[0] + '-' + nums[nums.length - 1];
+            }
+            return { pokemon: name, percent: d.pctSum > 0 ? d.pctSum + '%' : '', level: levelDisplay };
+        });
+    }
+
     function renderRoute(routeName) {
         var routeEncounters = data.encounters[routeName] || {};
         var selected = selections[routeName] || null;
@@ -144,12 +179,18 @@
         var content = document.getElementById('encounter-content');
         content.innerHTML = '';
 
+        var isStarter = (routeName === 'Starter');
         var hasAny = false;
+        var categoriesHtml = [];
+
         for (var c = 0; c < CATEGORY_ORDER.length; c++) {
             var cat = CATEGORY_ORDER[c];
-            var entries = routeEncounters[cat];
-            if (!entries || entries.length === 0) continue;
+            var rawEntries = routeEncounters[cat];
+            if (!rawEntries || rawEntries.length === 0) continue;
             hasAny = true;
+
+            var entries = deduplicateEntries(rawEntries);
+            var color = CATEGORY_COLORS[cat] || '#555';
 
             var section = document.createElement('div');
             section.className = 'encounter-category-section';
@@ -157,75 +198,54 @@
             var header = document.createElement('div');
             header.className = 'encounter-category-header';
             header.textContent = cat;
-            header.style.backgroundColor = CATEGORY_COLORS[cat] || '#555';
+            header.style.backgroundColor = color;
             section.appendChild(header);
 
-            var table = document.createElement('table');
-            table.className = 'encounter-table';
+            var grid = document.createElement('div');
+            grid.className = 'encounter-pill-grid';
 
-            // thead
-            var thead = document.createElement('thead');
-            var hrow = document.createElement('tr');
-            var isStarter = (routeName === 'Starter');
-            var cols = isStarter
-                ? ['Level', 'Pok\u00e9mon', '']
-                : ['%', 'Level', 'Pok\u00e9mon', ''];
-            for (var h = 0; h < cols.length; h++) {
-                var th = document.createElement('th');
-                th.textContent = cols[h];
-                hrow.appendChild(th);
-            }
-            thead.appendChild(hrow);
-            table.appendChild(thead);
-
-            // tbody
-            var tbody = document.createElement('tbody');
             for (var e = 0; e < entries.length; e++) {
                 (function (entry) {
-                    var tr = document.createElement('tr');
                     var isSelected = (selected === entry.pokemon);
-                    if (isSelected) tr.className = 'encounter-selected';
+                    var pill = document.createElement('div');
+                    pill.className = 'encounter-pill' + (isSelected ? ' encounter-pill-selected' : '');
+                    pill.title = (entry.percent ? entry.percent + ' · ' : '') + (entry.level ? 'Lv ' + entry.level : '');
 
-                    if (!isStarter) {
-                        var tdPct = document.createElement('td');
-                        tdPct.className = 'enc-pct';
-                        tdPct.textContent = entry.percent || '';
-                        tr.appendChild(tdPct);
-                    }
+                    var meta = document.createElement('span');
+                    meta.className = 'enc-pill-meta';
+                    var parts = [];
+                    if (!isStarter && entry.percent) parts.push(entry.percent);
+                    if (entry.level) parts.push('Lv\u00a0' + entry.level);
+                    meta.textContent = parts.join(' · ');
 
-                    var tdLvl = document.createElement('td');
-                    tdLvl.className = 'enc-level';
-                    tdLvl.textContent = entry.level || '';
-                    tr.appendChild(tdLvl);
+                    var nameSpan = document.createElement('span');
+                    nameSpan.className = 'enc-pill-name';
+                    nameSpan.textContent = entry.pokemon;
 
-                    var tdPoke = document.createElement('td');
-                    tdPoke.className = 'enc-pokemon';
-                    tdPoke.textContent = entry.pokemon;
-                    tr.appendChild(tdPoke);
-
-                    var tdBtn = document.createElement('td');
-                    tdBtn.className = 'enc-btn';
                     var btn = document.createElement('button');
                     btn.className = 'encounter-select-btn' + (isSelected ? ' selected' : '');
                     btn.textContent = isSelected ? '✓' : '○';
                     btn.title = isSelected ? 'Deselect ' + entry.pokemon : 'Select ' + entry.pokemon;
-                    btn.addEventListener('click', function () {
-                        toggleSelection(routeName, entry.pokemon);
-                    });
-                    tdBtn.appendChild(btn);
-                    tr.appendChild(tdBtn);
-
-                    tr.style.cursor = 'pointer';
-                    tr.addEventListener('click', function (ev) {
-                        if (ev.target.tagName === 'BUTTON') return;
+                    btn.addEventListener('click', function (ev) {
+                        ev.stopPropagation();
                         toggleSelection(routeName, entry.pokemon);
                     });
 
-                    tbody.appendChild(tr);
+                    pill.appendChild(meta);
+                    pill.appendChild(nameSpan);
+                    pill.appendChild(btn);
+
+                    pill.style.cursor = 'pointer';
+                    if (isSelected) pill.style.borderColor = color;
+                    pill.addEventListener('click', function () {
+                        toggleSelection(routeName, entry.pokemon);
+                    });
+
+                    grid.appendChild(pill);
                 }(entries[e]));
             }
-            table.appendChild(tbody);
-            section.appendChild(table);
+
+            section.appendChild(grid);
             content.appendChild(section);
         }
 

@@ -515,7 +515,7 @@ button svg {
 }
 
 .tracker-container {
-    padding: 8px 0 24px;
+    padding: 8px 0 16px;
     max-width: 900px;
 }
 
@@ -523,7 +523,7 @@ button svg {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
 }
 
@@ -540,25 +540,26 @@ button svg {
 .tracker-catch-counter {
     margin-left: auto;
     font-size: 13px;
-    color: #aaa;
+    color: #bbb;
     white-space: nowrap;
 }
 
 .tracker-route-header {
     display: flex;
     align-items: baseline;
-    gap: 14px;
-    margin-bottom: 14px;
+    gap: 12px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
 }
 
 .tracker-route-name {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
+    color: #e8e8e8;
 }
 
 .tracker-selected-display {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .tracker-selected-display.has-selection {
@@ -566,7 +567,7 @@ button svg {
 }
 
 .tracker-selected-display.no-selection {
-    color: #888;
+    color: #999;
     font-style: italic;
 }
 
@@ -574,98 +575,98 @@ button svg {
     color: #6dbf67;
 }
 
+/* ── Encounter content area: scrollable when tall ── */
+#encounter-content {
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* ── Category sections rendered as pill grid ── */
 .encounter-category-section {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
 .encounter-category-header {
     color: #fff;
     font-weight: bold;
-    font-size: 13px;
-    letter-spacing: 0.06em;
+    font-size: 11px;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
-    padding: 5px 10px;
-    border-radius: 4px 4px 0 0;
+    padding: 2px 8px;
+    border-radius: 3px;
     display: inline-block;
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
 
-.encounter-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    margin-bottom: 4px;
+/* Grid of encounter pills */
+.encounter-pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
-.encounter-table thead th {
-    padding: 5px 10px;
-    text-align: left;
-    font-size: 12px;
-    color: #aaa;
-    border-bottom: 1px solid #444;
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
-.encounter-table tbody tr {
-    border-bottom: 1px solid #313131;
-    cursor: pointer;
-    transition: background 0.1s;
-}
-
-.encounter-table tbody tr:hover {
+.encounter-pill {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 6px 3px 8px;
+    border-radius: 20px;
+    border: 1px solid #444;
     background: rgba(255,255,255,0.06);
-}
-
-.encounter-table tbody tr.encounter-selected {
-    background: rgba(109, 191, 103, 0.18);
-}
-
-.encounter-table tbody tr.encounter-selected:hover {
-    background: rgba(109, 191, 103, 0.26);
-}
-
-.encounter-table td {
-    padding: 5px 10px;
-    vertical-align: middle;
-}
-
-.enc-pct {
-    width: 44px;
-    color: #aaa;
     font-size: 12px;
+    cursor: pointer;
+    transition: background 0.12s, border-color 0.12s;
+    white-space: nowrap;
+    color: #ddd;
 }
 
-.enc-level {
-    width: 70px;
-    color: #ccc;
+.encounter-pill:hover {
+    background: rgba(255,255,255,0.13);
+    border-color: #777;
 }
 
-.enc-pokemon {
-    font-weight: 500;
+.encounter-pill-selected {
+    background: rgba(109, 191, 103, 0.22) !important;
+    border-color: #6dbf67 !important;
+    color: #d4f0d3;
 }
 
-.enc-btn {
-    width: 36px;
-    text-align: center;
+.enc-pill-meta {
+    font-size: 11px;
+    color: #888;
+    min-width: 0;
+}
+
+.encounter-pill-selected .enc-pill-meta {
+    color: #9dd69a;
+}
+
+.enc-pill-name {
+    font-weight: 600;
+    color: #e8e8e8;
+}
+
+.encounter-pill-selected .enc-pill-name {
+    color: #d4f0d3;
 }
 
 .encounter-select-btn {
     background: none;
     border: 1px solid #555;
     border-radius: 50%;
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
-    font-size: 13px;
-    color: #aaa;
+    font-size: 11px;
+    color: #999;
     line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.15s;
+    transition: all 0.12s;
     padding: 0;
+    flex-shrink: 0;
 }
 
 .encounter-select-btn:hover {
@@ -677,38 +678,39 @@ button svg {
     background: #6dbf67;
     border-color: #6dbf67;
     color: #fff;
-    font-size: 14px;
+    font-size: 11px;
 }
 
 .tracker-empty {
-    color: #777;
+    color: #888;
     font-style: italic;
-    padding: 12px 0;
+    padding: 8px 0;
+    font-size: 13px;
 }
 
 .tracker-progress-section {
-    margin-top: 28px;
-    padding-top: 14px;
-    border-top: 1px solid #333;
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid #3a3a3a;
 }
 
 .tracker-progress-label {
-    font-size: 12px;
+    font-size: 11px;
     color: #888;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .route-progress-strip {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 3px;
 }
 
 .route-progress-dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 2px;
     cursor: pointer;
     transition: transform 0.1s, opacity 0.1s;
@@ -725,25 +727,25 @@ button svg {
 }
 
 .route-progress-dot.empty {
-    background: #444;
+    background: #3a3a3a;
     border: 1px solid #555;
 }
 
 .route-progress-dot.current {
-    outline: 2px solid #fff;
+    outline: 2px solid #ccc;
     outline-offset: 1px;
 }
 
 .tracker-toggle-btn {
     display: block;
     width: 100%;
-    padding: 10px 16px;
+    padding: 8px 14px;
     margin-bottom: 4px;
-    background: #2a2a2a;
-    border: 1px solid #555;
+    background: #252525;
+    border: 1px solid #484848;
     border-radius: 5px;
-    color: inherit;
-    font-size: 14px;
+    color: #ddd;
+    font-size: 13px;
     font-family: inherit;
     font-weight: bold;
     text-align: left;
@@ -752,11 +754,20 @@ button svg {
 }
 
 .tracker-toggle-btn:hover {
-    background: #3a3a3a;
+    background: #333;
+    color: #fff;
 }
 
 #tracker-panel-wrapper {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+}
+
+#tracker-panel {
+    background: #1e1e1e;
+    border: 1px solid #3a3a3a;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    padding: 10px 14px 8px;
 }
 
 .range-delete-move {
