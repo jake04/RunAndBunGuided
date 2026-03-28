@@ -72,6 +72,33 @@
   </div>
 
 <div class="wrapper">
+
+    <!-- Encounter Tracker collapsible panel -->
+    <div id="tracker-panel-wrapper">
+        <button id="tracker-toggle-btn" class="tracker-toggle-btn" onclick="toggleTrackerPanel()">
+            &#128197; Encounter Tracker <span id="tracker-toggle-arrow">&#9660;</span>
+        </button>
+        <div id="tracker-panel" style="display:none">
+            <div class="tracker-container">
+                <div class="tracker-nav">
+                    <button class="btn btn-small" id="prev-route-btn" onclick="navigateRoute(-1)">&#8592; Prev</button>
+                    <select id="route-select" class="tracker-route-select"></select>
+                    <button class="btn btn-small" id="next-route-btn" onclick="navigateRoute(1)">Next &#8594;</button>
+                    <span class="tracker-catch-counter" id="catch-counter"></span>
+                </div>
+                <div class="tracker-route-header">
+                    <span class="tracker-route-name" id="current-route-name"></span>
+                    <span class="tracker-selected-display" id="selected-display"></span>
+                </div>
+                <div id="encounter-content"></div>
+                <div class="tracker-progress-section">
+                    <div class="tracker-progress-label">Route Progress</div>
+                    <div class="route-progress-strip" id="progress-strip"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div aria-label="Settings" role="region">
         <span class="title-text">Pok&eacute;mon Damage Calculator</span>
         <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
@@ -1881,6 +1908,17 @@
     <script type="text/javascript" src="./calc/result.js?"></script>
     <script type="text/javascript" src="./calc/adaptable.js?"></script>
     <script type="text/javascript" src="./calc/index.js?"></script>
+    <script type="text/javascript" src="./js/data/encounters.js?"></script>
+    <script type="text/javascript" src="./js/encounter_tracker.js?"></script>
+    <script type="text/javascript">
+        function toggleTrackerPanel() {
+            var panel = document.getElementById('tracker-panel');
+            var arrow = document.getElementById('tracker-toggle-arrow');
+            var open = panel.style.display !== 'none';
+            panel.style.display = open ? 'none' : '';
+            arrow.innerHTML = open ? '&#9660;' : '&#9650;';
+        }
+    </script>
     <script type="text/javascript" src="./js/shared_controls.js?"></script>
     <script type="text/javascript" src="./js/index_randoms_controls.js?"></script>
     <script type="text/javascript" src="./js/moveset_import.js?"></script>
