@@ -307,3 +307,53 @@ input.select2-input {
     font-size: 16px;
     line-height: 1.215;
 }
+
+/* ── Encounter Tracker dark overrides ── */
+.tracker-toggle-btn {
+    background: var(--fieldset-color);
+    border-color: #555;
+    color: var(--text);
+}
+
+.tracker-toggle-btn:hover {
+    background: #333;
+}
+
+#tracker-panel {
+    background: var(--fieldset-color);
+    border-color: #555;
+    color: var(--text);
+}
+
+#tracker-panel .tracker-route-name { color: var(--text); }
+#tracker-panel .tracker-catch-counter { color: #bbb; }
+
+#tracker-panel .encounter-pill {
+    background: rgba(255,255,255,0.06);
+    border-color: #444;
+    color: #ddd;
+}
+
+#tracker-panel .encounter-pill:hover {
+    background: rgba(255,255,255,0.13);
+    border-color: #777;
+}
+
+#tracker-panel .encounter-pill-selected {
+    background: rgba(109, 191, 103, 0.22) !important;
+    border-color: #6dbf67 !important;
+    color: #d4f0d3;
+}
+
+#tracker-panel .enc-pill-meta { color: #888; }
+#tracker-panel .encounter-pill-selected .enc-pill-meta { color: #9dd69a; }
+#tracker-panel .enc-pill-name { color: #e8e8e8; }
+#tracker-panel .encounter-pill-selected .enc-pill-name { color: #d4f0d3; }
+
+#tracker-panel .encounter-select-btn { border-color: #555; color: #999; }
+
+#tracker-panel .tracker-progress-section { border-top-color: #3a3a3a; }
+#tracker-panel .route-progress-dot.empty { background: #3a3a3a; border-color: #555; }
+#tracker-panel .route-progress-dot.current { outline-color: #ccc; }
+
+#tracker-panel .tracker-reset-btn { border-color: #6b2a28; }

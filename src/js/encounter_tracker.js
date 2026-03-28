@@ -262,6 +262,19 @@
 
     // ── Selection toggle ──────────────────────────────────────────────────────
 
+    // ── Reset all selections ───────────────────────────────────────────────
+
+    function resetAll() {
+        if (!confirm('Clear all encounter selections?')) return;
+        selections = {};
+        saveSelections();
+        renderRoute(data.routes[currentIndex]);
+        buildProgressStrip();
+        updateCounter();
+    }
+
+    window.resetEncounters = resetAll;
+
     function toggleSelection(routeName, pokemon) {
         if (selections[routeName] === pokemon) {
             delete selections[routeName];

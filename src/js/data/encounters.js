@@ -106,7 +106,12 @@ window.ENCOUNTER_DATA = {
   ],
   "encounters": {
     "Starter": {
-          },
+        "Land": [
+            { "level": "5", "pokemon": "Turtwig", "percent": "" },
+            { "level": "5", "pokemon": "Chimchar", "percent": "" },
+            { "level": "5", "pokemon": "Piplup", "percent": "" }
+        ]
+    },
     "Littleroot Town": {
       "Fish": [
         {

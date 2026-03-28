@@ -540,7 +540,7 @@ button svg {
 .tracker-catch-counter {
     margin-left: auto;
     font-size: 13px;
-    color: #bbb;
+    color: #666;
     white-space: nowrap;
 }
 
@@ -555,7 +555,7 @@ button svg {
 .tracker-route-name {
     font-size: 17px;
     font-weight: bold;
-    color: #e8e8e8;
+    color: #222;
 }
 
 .tracker-selected-display {
@@ -567,7 +567,7 @@ button svg {
 }
 
 .tracker-selected-display.no-selection {
-    color: #999;
+    color: #888;
     font-style: italic;
 }
 
@@ -604,6 +604,14 @@ button svg {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    width: 100%;
+}
+
+.encounter-pill {
+    flex: 1 1 auto;
+    min-width: 130px;
+    max-width: 220px;
+    justify-content: space-between;
 }
 
 .encounter-pill {
@@ -612,54 +620,55 @@ button svg {
     gap: 5px;
     padding: 3px 6px 3px 8px;
     border-radius: 20px;
-    border: 1px solid #444;
-    background: rgba(255,255,255,0.06);
+    border: 1px solid #bbb;
+    background: rgba(255,255,255,0.55);
     font-size: 12px;
     cursor: pointer;
     transition: background 0.12s, border-color 0.12s;
     white-space: nowrap;
-    color: #ddd;
+    color: #333;
+    box-sizing: border-box;
 }
 
 .encounter-pill:hover {
-    background: rgba(255,255,255,0.13);
-    border-color: #777;
+    background: rgba(255,255,255,0.85);
+    border-color: #888;
 }
 
 .encounter-pill-selected {
-    background: rgba(109, 191, 103, 0.22) !important;
-    border-color: #6dbf67 !important;
-    color: #d4f0d3;
+    background: rgba(109, 191, 103, 0.25) !important;
+    border-color: #4a9e45 !important;
+    color: #1a4a18;
 }
 
 .enc-pill-meta {
     font-size: 11px;
-    color: #888;
+    color: #777;
     min-width: 0;
 }
 
 .encounter-pill-selected .enc-pill-meta {
-    color: #9dd69a;
+    color: #3a7a38;
 }
 
 .enc-pill-name {
     font-weight: 600;
-    color: #e8e8e8;
+    color: #111;
 }
 
 .encounter-pill-selected .enc-pill-name {
-    color: #d4f0d3;
+    color: #1a4a18;
 }
 
 .encounter-select-btn {
     background: none;
-    border: 1px solid #555;
+    border: 1px solid #aaa;
     border-radius: 50%;
     width: 20px;
     height: 20px;
     cursor: pointer;
     font-size: 11px;
-    color: #999;
+    color: #888;
     line-height: 1;
     display: flex;
     align-items: center;
@@ -682,7 +691,7 @@ button svg {
 }
 
 .tracker-empty {
-    color: #888;
+    color: #777;
     font-style: italic;
     padding: 8px 0;
     font-size: 13px;
@@ -691,7 +700,7 @@ button svg {
 .tracker-progress-section {
     margin-top: 14px;
     padding-top: 10px;
-    border-top: 1px solid #3a3a3a;
+    border-top: 1px solid #ccc;
 }
 
 .tracker-progress-label {
@@ -727,12 +736,12 @@ button svg {
 }
 
 .route-progress-dot.empty {
-    background: #3a3a3a;
-    border: 1px solid #555;
+    background: #ccc;
+    border: 1px solid #aaa;
 }
 
 .route-progress-dot.current {
-    outline: 2px solid #ccc;
+    outline: 2px solid #555;
     outline-offset: 1px;
 }
 
@@ -740,11 +749,11 @@ button svg {
     display: block;
     width: 100%;
     padding: 8px 14px;
-    margin-bottom: 4px;
-    background: #252525;
-    border: 1px solid #484848;
-    border-radius: 5px;
-    color: #ddd;
+    margin-bottom: 0;
+    background: #F1F4F9;
+    border: 1px solid #AAAAAA;
+    border-radius: 5px 5px 0 0;
+    color: #333;
     font-size: 13px;
     font-family: inherit;
     font-weight: bold;
@@ -754,20 +763,36 @@ button svg {
 }
 
 .tracker-toggle-btn:hover {
-    background: #333;
-    color: #fff;
+    background: #e4e9f4;
+}
+
+/* When tracker is closed, restore full rounded corners */
+#tracker-panel[style*="display:none"] ~ .tracker-toggle-btn,
+#tracker-panel-wrapper:not(:has(#tracker-panel[style=""])) .tracker-toggle-btn {
+    border-radius: 5px;
 }
 
 #tracker-panel-wrapper {
     margin-bottom: 12px;
 }
 
+.tracker-reset-btn {
+    color: #d9534f;
+    border-color: #c9a0a0;
+}
+
+.tracker-reset-btn:hover {
+    background: rgba(217,83,79,0.1);
+    border-color: #d9534f;
+}
+
 #tracker-panel {
-    background: #1e1e1e;
-    border: 1px solid #3a3a3a;
+    background: #F1F4F9;
+    border: 1px solid #AAAAAA;
     border-top: none;
     border-radius: 0 0 5px 5px;
     padding: 10px 14px 8px;
+    color: #222;
 }
 
 .range-delete-move {
