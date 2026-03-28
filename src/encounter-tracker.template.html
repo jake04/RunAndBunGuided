@@ -52,6 +52,8 @@
             <select id="route-select" class="tracker-route-select"></select>
             <button class="btn btn-small" id="next-route-btn" onclick="navigateRoute(1)">Next &#8594;</button>
             <button class="btn btn-small tracker-reset-btn" onclick="resetEncounters()" title="Clear all selections">Reset</button>
+            <button class="btn btn-small" onclick="exportEncounters()" title="Export selections to file">Export</button>
+            <label class="btn btn-small tracker-import-label" title="Import selections from file">Import<input type="file" accept=".txt" style="display:none" onchange="handleImportFile(this)"></label>
             <span class="tracker-catch-counter" id="catch-counter"></span>
         </div>
 

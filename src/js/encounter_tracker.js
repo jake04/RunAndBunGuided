@@ -275,6 +275,62 @@
 
     window.resetEncounters = resetAll;
 
+    // ── Export ────────────────────────────────────────────────────────────────
+
+    function exportSelections() {
+        var lines = [];
+        for (var i = 0; i < data.routes.length; i++) {
+            var route = data.routes[i];
+            if (selections[route]) {
+                lines.push(route + ': ' + selections[route]);
+            }
+        }
+        var text = lines.join('\n');
+        var blob = new Blob([text], { type: 'text/plain' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'encounter-tracker.txt';
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    window.exportEncounters = exportSelections;
+
+    // ── Import ────────────────────────────────────────────────────────────────
+
+    function importSelections(text) {
+        var newSelections = {};
+        var lines = text.split('\n');
+        for (var i = 0; i < lines.length; i++) {
+            var line = lines[i].trim();
+            if (!line) continue;
+            var sep = line.indexOf(': ');
+            if (sep === -1) continue;
+            var route = line.slice(0, sep).trim();
+            var pokemon = line.slice(sep + 2).trim();
+            if (pokemon) newSelections[route] = pokemon;
+        }
+        selections = newSelections;
+        saveSelections();
+        renderRoute(data.routes[currentIndex]);
+        buildProgressStrip();
+        updateCounter();
+    }
+
+    function handleImportFile(input) {
+        var file = input.files[0];
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            importSelections(e.target.result);
+            input.value = '';
+        };
+        reader.readAsText(file);
+    }
+
+    window.handleImportFile = handleImportFile;
+
     function toggleSelection(routeName, pokemon) {
         if (selections[routeName] === pokemon) {
             delete selections[routeName];

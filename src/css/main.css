@@ -786,6 +786,11 @@ button svg {
     border-color: #d9534f;
 }
 
+.tracker-import-label {
+    cursor: pointer;
+    user-select: none;
+}
+
 #tracker-panel {
     background: #F1F4F9;
     border: 1px solid #AAAAAA;
