@@ -9,3 +9,17 @@ dist/
 scripts/__pycache__
 .vscode
 .env
+local/
+
+# macOS app build
+macos-app/build/
+macos-app/dist/
+macos-app/__pycache__/
+macos-app/*.egg-info/
+.Python
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+.venv/
+venv/

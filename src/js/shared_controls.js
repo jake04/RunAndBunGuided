@@ -2217,6 +2217,28 @@ $(document).ready(function () {
         $('#massExport-overlay').fadeOut(200);
       }
     });
+
+	// Initialize Encounter Tracker
+	if (typeof EncounterTracker !== 'undefined') {
+		encounterTracker = new EncounterTracker();
+		
+		// Reset button handler
+		$('#encounter-reset-btn').on('click', function() {
+			encounterTracker.resetProgress();
+		});
+
+		// Toggle collapse/expand tracker
+		$('#encounter-toggle-btn').on('click', function() {
+			$('#encounter-tracker-wrapper').toggleClass('collapsed');
+			const isCollapsed = $('#encounter-tracker-wrapper').hasClass('collapsed');
+			localStorage.setItem('encounter_tracker_collapsed', isCollapsed);
+		});
+
+		// Restore collapsed state from localStorage
+		if (localStorage.getItem('encounter_tracker_collapsed') === 'true') {
+			$('#encounter-tracker-wrapper').addClass('collapsed');
+		}
+	}
 });
 
 /* Click-to-copy function */

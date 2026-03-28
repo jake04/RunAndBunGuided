@@ -42,7 +42,12 @@
     "bundle": "subpkg run bundle",
     "build": "subpkg run build && node build view",
     "test": "subpkg run test && npm run build && eslint --cache src --ext js",
-    "postinstall": "subpkg install"
+    "postinstall": "subpkg install",
+    "macos:setup": "python3 -m venv macos-app/venv && macos-app/venv/bin/python3 -m pip install --upgrade pip && macos-app/venv/bin/python3 -m pip install -r macos-app/requirements.txt",
+    "macos:install": "npm run macos:setup",
+    "macos:dev": "macos-app/venv/bin/python3 macos-app/src/app.py",
+    "macos:build": "npm run build && macos-app/venv/bin/python3 macos-app/setup.py py2app",
+    "macos:clean": "rm -rf macos-app/build macos-app/dist macos-app/venv"
   },
   "subPackages": [
     "calc"

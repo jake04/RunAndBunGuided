@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <base href="/RunAndBunGuided/">
+    <base href="/">
     <meta charset="UTF-8" />
     <title>RnB Damage Calculator</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
@@ -72,6 +72,43 @@
   </div>
 
 <div class="wrapper">
+    <!-- Encounter Tracker Section -->
+    <div id="encounter-tracker-wrapper" style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+        <h2 style="margin-top: 0; font-size: 1.2rem;">Encounter Tracker</h2>
+        <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 1.5rem;">Track which Pokémon you've encountered on each route</p>
+        
+        <div style="margin-bottom: 1.5rem;">
+            <label for="et-route" style="display: block; margin-bottom: 0.75rem; font-weight: 500;">Select Route:</label>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <button id="et-prev" title="Previous Route" style="padding: 0.6rem 0.8rem; background: rgba(74,158,255,0.2); border: 1px solid rgba(74,158,255,0.3); color: #4a9eff; border-radius: 4px; cursor: pointer; font-weight: 500; transition: all 0.15s; font-size: 1rem;">←</button>
+                <select id="et-route" style="flex: 1; padding: 0.6rem; font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; background: rgba(30,30,30,0.8); color: white;">
+                    <option value="">-- Choose a route --</option>
+                </select>
+                <button id="et-next" title="Next Route" style="padding: 0.6rem 0.8rem; background: rgba(74,158,255,0.2); border: 1px solid rgba(74,158,255,0.3); color: #4a9eff; border-radius: 4px; cursor: pointer; font-weight: 500; transition: all 0.15s; font-size: 1rem;">→</button>
+            </div>
+        </div>
+        
+        <div id="et-list" style="margin-bottom: 1rem; min-height: 100px; max-height: 300px; overflow-y: auto; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 4px;">
+        </div>
+        
+        <div id="et-stats" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem; padding: 1rem; background: rgba(74,158,255,0.1); border-radius: 4px; border: 1px solid rgba(74,158,255,0.2);">
+            <div style="text-align: center;">
+                <div style="font-size: 0.85rem; opacity: 0.8;">Pokémon Found</div>
+                <div id="et-found" style="font-size: 1.3rem; font-weight: bold; color: #4a9eff;">0 / 0</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-size: 0.85rem; opacity: 0.8;">Routes Visited</div>
+                <div id="et-routes" style="font-size: 1.3rem; font-weight: bold; color: #4a9eff;">0 / 0</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-size: 0.85rem; opacity: 0.8;">Total Progress</div>
+                <div id="et-percent" style="font-size: 1.3rem; font-weight: bold; color: #4a9eff;">0%</div>
+            </div>
+        </div>
+        
+        <button id="et-reset" style="padding: 0.6rem 1.2rem; background: rgba(244,67,54,0.2); border: 1px solid rgba(244,67,54,0.4); color: #f44336; border-radius: 4px; cursor: pointer; font-weight: 500;">Reset Progress</button>
+    </div>
+
     <div aria-label="Settings" role="region">
         <span class="title-text">Pok&eacute;mon Damage Calculator</span>
         <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
@@ -1881,6 +1918,8 @@
     <script type="text/javascript" src="./calc/result.js?"></script>
     <script type="text/javascript" src="./calc/adaptable.js?"></script>
     <script type="text/javascript" src="./calc/index.js?"></script>
+    <script type="text/javascript" src="./js/data/encounters.js?"></script>
+    <script type="text/javascript" src="./js/encounter_tracker.js?"></script>
     <script type="text/javascript" src="./js/shared_controls.js?"></script>
     <script type="text/javascript" src="./js/index_randoms_controls.js?"></script>
     <script type="text/javascript" src="./js/moveset_import.js?"></script>

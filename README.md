@@ -7,6 +7,41 @@ This is a fork of the damage calculator for Pokemon Run and Bun, created by dekz
 - **Interested in helping the project? Read [CONTRIBUTING.md](CONTRIBUTING.md)**
 - License: [LICENSE](LICENSE)
 
+---
+
+## 🎯 macOS Native Application
+
+This project is now available as a **standalone native macOS application**! No browser needed.
+
+### Features
+- ✨ Native macOS window with menu bar
+- 📊 Same calculator UI, embedded in a native app
+- 💾 Import Pokémon team data from mGBA Lua scripts
+- ⚡ Lightweight and fast (runs locally)
+- 🔄 Works alongside mGBA for seamless integration
+
+### Quick Start
+```bash
+# Install dependencies
+npm run macos:install
+npm run build
+
+# Run the macOS app
+npm run macos:dev
+
+# Or build a distributable .app bundle
+npm run macos:build
+```
+
+**For detailed setup instructions, see [macos-app/QUICKSTART.md](macos-app/QUICKSTART.md)**
+
+Other useful docs:
+- [macOS App Setup Guide](macos-app/SETUP_GUIDE.md) — Comprehensive setup & troubleshooting
+- [Architecture & Features](macos-app/README.md) — How it all works
+- [Roadmap](macos-app/ROADMAP.md) — Planned improvements
+
+---
+
 *The rest of the readme is lifted from the EKalc original, until I rewrite it if I decide I need to*
 
 ---

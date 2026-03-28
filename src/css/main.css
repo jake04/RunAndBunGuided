@@ -1285,3 +1285,6 @@ body.rc-selecting-target .trainer-pok-opposing {
 .poke-info .info-group > div:has(input.level) input.level {
     flex-shrink: 0;
 }
+
+/* ===== Encounter Tracker Styles (Inline Styling) ===== */
+/* Encounter tracker now uses inline styles in HTML for simplicity */

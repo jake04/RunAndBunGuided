@@ -1,0 +1,7 @@
+PyQt5==5.15.9
+PyQtWebEngine==5.15.6
+PyQtWebChannel==5.15.6
+Flask==3.0.0
+Flask-CORS==4.0.0
+requests==2.31.0
+py2app==0.28
