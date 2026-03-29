@@ -660,6 +660,38 @@ button svg {
     color: #1a4a18;
 }
 
+/* Previously-caught pill (pokemon already caught in an earlier route) */
+.encounter-pill-prev-caught {
+    opacity: 0.45;
+    cursor: not-allowed !important;
+    background: rgba(180,180,180,0.15) !important;
+    border-color: #bbb !important;
+    pointer-events: none;
+}
+
+.encounter-pill-prev-caught:hover {
+    background: rgba(180,180,180,0.15) !important;
+    border-color: #bbb !important;
+}
+
+.enc-pill-caught-label {
+    color: #999;
+    font-style: italic;
+}
+
+.enc-pill-name-caught {
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+.prev-caught-btn {
+    color: #bbb !important;
+    border-color: #ddd !important;
+    cursor: not-allowed !important;
+    background: none !important;
+}
+
+
 .encounter-select-btn {
     background: none;
     border: 1px solid #aaa;

@@ -135,6 +135,20 @@
         return 'https://play.pokemonshowdown.com/sprites/gen5/' + normalized + '.png';
     }
 
+    // ── Cross-route pokemon lookup ────────────────────────────────────────────
+
+    // Returns the name of the earliest route (before currentRouteName) where
+    // the given pokemon was selected, or null if it has not been caught earlier.
+    function getPreviousCatchRoute(pokemonName, currentRouteName) {
+        var currentIdx = data.routes.indexOf(currentRouteName);
+        for (var i = 0; i < currentIdx; i++) {
+            if (selections[data.routes[i]] === pokemonName) {
+                return data.routes[i];
+            }
+        }
+        return null;
+    }
+
     // ── Route renderer ────────────────────────────────────────────────────────
 
     // Collapse duplicate Pokémon entries within a category, summing percentages and merging level ranges.
@@ -206,6 +220,36 @@
             var entries = deduplicateEntries(rawEntries);
             var color = CATEGORY_COLORS[cat] || '#555';
 
+            // Determine which entries were caught in an earlier route and
+            // compute adjusted encounter rates for the remaining entries.
+            var prevCaughtMap = {};   // pokemon -> route name where it was caught
+            var totalCatPct = 0;
+            var caughtCatPct = 0;
+            for (var ei = 0; ei < entries.length; ei++) {
+                var entryPct = parseInt(entries[ei].percent) || 0;
+                totalCatPct += entryPct;
+                var prevRoute = getPreviousCatchRoute(entries[ei].pokemon, routeName);
+                if (prevRoute) {
+                    prevCaughtMap[entries[ei].pokemon] = prevRoute;
+                    caughtCatPct += entryPct;
+                }
+            }
+            var remainingCatPct = totalCatPct - caughtCatPct;
+            var hasRateAdjustment = !isStarter && caughtCatPct > 0 && remainingCatPct > 0;
+
+            // Pre-compute adjusted display percentages for non-caught entries.
+            var adjustedPcts = {};
+            if (hasRateAdjustment) {
+                for (var ei2 = 0; ei2 < entries.length; ei2++) {
+                    var ename = entries[ei2].pokemon;
+                    if (!prevCaughtMap[ename]) {
+                        var rawPct = parseInt(entries[ei2].percent) || 0;
+                        var adjVal = Math.round(rawPct / remainingCatPct * 100 * 10) / 10;
+                        adjustedPcts[ename] = (adjVal === Math.floor(adjVal) ? Math.floor(adjVal) : adjVal) + '%';
+                    }
+                }
+            }
+
             var section = document.createElement('div');
             section.className = 'encounter-category-section';
 
@@ -221,16 +265,34 @@
             for (var e = 0; e < entries.length; e++) {
                 (function (entry) {
                     var isSelected = (selected === entry.pokemon);
+                    var prevCaughtRoute = prevCaughtMap[entry.pokemon] || null;
+                    var displayPct = hasRateAdjustment && !prevCaughtRoute
+                        ? (adjustedPcts[entry.pokemon] || entry.percent)
+                        : entry.percent;
+
                     var pill = document.createElement('div');
-                    pill.className = 'encounter-pill' + (isSelected ? ' encounter-pill-selected' : '');
-                    pill.title = (entry.percent ? entry.percent + ' · ' : '') + (entry.level ? 'Lv ' + entry.level : '');
+                    if (prevCaughtRoute) {
+                        pill.className = 'encounter-pill encounter-pill-prev-caught';
+                        pill.title = entry.pokemon + ' was already caught in ' + prevCaughtRoute;
+                    } else {
+                        pill.className = 'encounter-pill' + (isSelected ? ' encounter-pill-selected' : '');
+                        var titleParts = [];
+                        if (!isStarter && displayPct) titleParts.push(displayPct + (hasRateAdjustment ? ' (adjusted)' : ''));
+                        if (entry.level) titleParts.push('Lv ' + entry.level);
+                        pill.title = titleParts.join(' · ');
+                    }
 
                     var meta = document.createElement('span');
-                    meta.className = 'enc-pill-meta';
-                    var parts = [];
-                    if (!isStarter && entry.percent) parts.push(entry.percent);
-                    if (entry.level) parts.push('Lv\u00a0' + entry.level);
-                    meta.textContent = parts.join(' · ');
+                    if (prevCaughtRoute) {
+                        meta.className = 'enc-pill-meta enc-pill-caught-label';
+                        meta.textContent = '✓ caught';
+                    } else {
+                        meta.className = 'enc-pill-meta';
+                        var parts = [];
+                        if (!isStarter && displayPct) parts.push(displayPct);
+                        if (entry.level) parts.push('Lv\u00a0' + entry.level);
+                        meta.textContent = parts.join(' · ');
+                    }
 
                     var sprite = document.createElement('img');
                     sprite.className = 'enc-pill-sprite';
@@ -240,28 +302,37 @@
                     sprite.onerror = function () { this.style.display = 'none'; };
 
                     var nameSpan = document.createElement('span');
-                    nameSpan.className = 'enc-pill-name';
+                    nameSpan.className = 'enc-pill-name' + (prevCaughtRoute ? ' enc-pill-name-caught' : '');
                     nameSpan.textContent = entry.pokemon;
 
                     var btn = document.createElement('button');
-                    btn.className = 'encounter-select-btn' + (isSelected ? ' selected' : '');
-                    btn.textContent = isSelected ? '✓' : '○';
-                    btn.title = isSelected ? 'Deselect ' + entry.pokemon : 'Select ' + entry.pokemon;
-                    btn.addEventListener('click', function (ev) {
-                        ev.stopPropagation();
-                        toggleSelection(routeName, entry.pokemon);
-                    });
+                    if (prevCaughtRoute) {
+                        btn.className = 'encounter-select-btn prev-caught-btn';
+                        btn.textContent = '✗';
+                        btn.title = 'Already caught in ' + prevCaughtRoute;
+                        btn.disabled = true;
+                    } else {
+                        btn.className = 'encounter-select-btn' + (isSelected ? ' selected' : '');
+                        btn.textContent = isSelected ? '✓' : '○';
+                        btn.title = isSelected ? 'Deselect ' + entry.pokemon : 'Select ' + entry.pokemon;
+                        btn.addEventListener('click', function (ev) {
+                            ev.stopPropagation();
+                            toggleSelection(routeName, entry.pokemon);
+                        });
+                    }
 
                     pill.appendChild(meta);
                     pill.appendChild(sprite);
                     pill.appendChild(nameSpan);
                     pill.appendChild(btn);
 
-                    pill.style.cursor = 'pointer';
-                    if (isSelected) pill.style.borderColor = color;
-                    pill.addEventListener('click', function () {
-                        toggleSelection(routeName, entry.pokemon);
-                    });
+                    if (!prevCaughtRoute) {
+                        pill.style.cursor = 'pointer';
+                        if (isSelected) pill.style.borderColor = color;
+                        pill.addEventListener('click', function () {
+                            toggleSelection(routeName, entry.pokemon);
+                        });
+                    }
 
                     grid.appendChild(pill);
                 }(entries[e]));
