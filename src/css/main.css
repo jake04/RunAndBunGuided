@@ -791,6 +791,21 @@ button svg {
     user-select: none;
 }
 
+.pokeball-icon {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+.enc-pill-sprite {
+    width: 28px;
+    height: 28px;
+    image-rendering: pixelated;
+    flex-shrink: 0;
+    margin: -4px 0;
+}
+
 #tracker-panel {
     background: #F1F4F9;
     border: 1px solid #AAAAAA;

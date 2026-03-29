@@ -121,6 +121,20 @@
         if (el) el.textContent = caughtCount() + ' / ' + data.routes.length + ' caught';
     }
 
+    // ── Sprite helpers ────────────────────────────────────────────────────────
+
+    function getPokemonSpriteUrl(name) {
+        var normalized = name
+            .toLowerCase()
+            .replace(/♀/g, '-f')
+            .replace(/♂/g, '-m')
+            .replace(/[''´`]/g, '')
+            .replace(/[.\s:]+/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
+        return 'https://play.pokemonshowdown.com/sprites/gen5/' + normalized + '.png';
+    }
+
     // ── Route renderer ────────────────────────────────────────────────────────
 
     // Collapse duplicate Pokémon entries within a category, summing percentages and merging level ranges.
@@ -218,6 +232,13 @@
                     if (entry.level) parts.push('Lv\u00a0' + entry.level);
                     meta.textContent = parts.join(' · ');
 
+                    var sprite = document.createElement('img');
+                    sprite.className = 'enc-pill-sprite';
+                    sprite.src = getPokemonSpriteUrl(entry.pokemon);
+                    sprite.alt = '';
+                    sprite.loading = 'lazy';
+                    sprite.onerror = function () { this.style.display = 'none'; };
+
                     var nameSpan = document.createElement('span');
                     nameSpan.className = 'enc-pill-name';
                     nameSpan.textContent = entry.pokemon;
@@ -232,6 +253,7 @@
                     });
 
                     pill.appendChild(meta);
+                    pill.appendChild(sprite);
                     pill.appendChild(nameSpan);
                     pill.appendChild(btn);
 
