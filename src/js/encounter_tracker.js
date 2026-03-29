@@ -137,13 +137,13 @@
 
     // ── Cross-route pokemon lookup ────────────────────────────────────────────
 
-    // Returns the name of the earliest route (before currentRouteName) where
-    // the given pokemon was selected, or null if it has not been caught earlier.
+    // Returns the name of any other route where the given pokemon was already
+    // selected, or null if it has not been caught anywhere else.
     function getPreviousCatchRoute(pokemonName, currentRouteName) {
-        var currentIdx = data.routes.indexOf(currentRouteName);
-        for (var i = 0; i < currentIdx; i++) {
-            if (selections[data.routes[i]] === pokemonName) {
-                return data.routes[i];
+        for (var i = 0; i < data.routes.length; i++) {
+            var route = data.routes[i];
+            if (route !== currentRouteName && selections[route] === pokemonName) {
+                return route;
             }
         }
         return null;
