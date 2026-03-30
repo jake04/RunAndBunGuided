@@ -357,3 +357,29 @@ input.select2-input {
 #tracker-panel .route-progress-dot.current { outline-color: #ccc; }
 
 #tracker-panel .tracker-reset-btn { border-color: #6b2a28; }
+
+/* ── Trainer Tracker dark overrides ── */
+#tracker-panel .split-label { background: #3a3a3a; color: #aaa; }
+
+#tracker-panel .trainer-section { border-color: #444; }
+#tracker-panel .trainer-section-header { background: #3a4550; }
+#tracker-panel .trainer-section-header:hover { background: #4a5a6a; }
+#tracker-panel .trainer-section-body { background: #1e1e1e; }
+
+#tracker-panel .trainer-card { background: #2a2a2a; border-color: #444; }
+#tracker-panel .trainer-card.boss { border-color: #c0392b; }
+#tracker-panel .trainer-card-header { background: #333; }
+#tracker-panel .trainer-card.boss .trainer-card-header { background: #4a2020; }
+#tracker-panel .trainer-card-header:hover { background: #3d3d3d; }
+#tracker-panel .trainer-card.boss .trainer-card-header:hover { background: #5a2828; }
+
+#tracker-panel .trainer-name { color: #ddd; }
+#tracker-panel .trainer-defeat-btn { background: #333; border-color: #555; color: #aaa; }
+#tracker-panel .trainer-defeat-btn:hover { background: #444; }
+#tracker-panel .trainer-defeat-btn.defeated { background: #27ae60; color: #fff; border-color: #27ae60; }
+
+#tracker-panel .trainer-pokemon-row { border-bottom-color: #333; }
+#tracker-panel .trainer-pok-name { color: #ddd; }
+#tracker-panel .trainer-pok-level { color: #888; }
+#tracker-panel .trainer-pok-detail { color: #999; }
+#tracker-panel .trainer-pok-moves { color: #aaa; }

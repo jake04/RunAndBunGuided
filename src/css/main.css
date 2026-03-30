@@ -847,6 +847,206 @@ button svg {
     color: #222;
 }
 
+/* ── Trainer Tracker ────────────────────────────────────────────────────── */
+
+.split-label {
+    display: inline-block;
+    font-size: 11px;
+    color: #777;
+    background: #e8e8e8;
+    border-radius: 3px;
+    padding: 1px 7px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.trainer-section {
+    margin-top: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.trainer-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #566573;
+    color: #fff;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    user-select: none;
+}
+
+.trainer-section-header:hover {
+    background: #4a5a6a;
+}
+
+.trainer-section-header .trainer-toggle-icon {
+    font-size: 11px;
+    margin-left: 6px;
+}
+
+.trainer-section-body {
+    padding: 8px 10px;
+    background: #f7f8fa;
+}
+
+.trainer-defeat-counter {
+    font-size: 11px;
+    font-weight: normal;
+    opacity: 0.85;
+}
+
+.trainer-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.trainer-card:last-child {
+    margin-bottom: 0;
+}
+
+.trainer-card.boss {
+    border-color: #c0392b;
+    border-width: 2px;
+}
+
+.trainer-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    background: #eef1f5;
+    cursor: pointer;
+    user-select: none;
+}
+
+.trainer-card.boss .trainer-card-header {
+    background: #fadbd8;
+}
+
+.trainer-card-header:hover {
+    background: #dde3ea;
+}
+
+.trainer-card.boss .trainer-card-header:hover {
+    background: #f1b0a8;
+}
+
+.trainer-name {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.trainer-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.trainer-tag-boss {
+    background: #c0392b;
+    color: #fff;
+}
+
+.trainer-tag-optional {
+    background: #7f8c8d;
+    color: #fff;
+}
+
+.trainer-tag-double {
+    background: #2980b9;
+    color: #fff;
+}
+
+.trainer-defeat-btn {
+    font-size: 11px;
+    padding: 2px 10px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.trainer-defeat-btn:hover {
+    background: #eee;
+}
+
+.trainer-defeat-btn.defeated {
+    background: #27ae60;
+    color: #fff;
+    border-color: #27ae60;
+}
+
+.trainer-card.trainer-defeated {
+    opacity: 0.55;
+}
+
+.trainer-card.trainer-defeated .trainer-name {
+    text-decoration: line-through;
+}
+
+.trainer-pokemon-list {
+    padding: 6px 10px 8px;
+}
+
+.trainer-pokemon-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 12px;
+    flex-wrap: wrap;
+}
+
+.trainer-pokemon-row:last-child {
+    border-bottom: none;
+}
+
+.trainer-pok-sprite {
+    width: 40px;
+    height: 40px;
+    image-rendering: pixelated;
+    flex-shrink: 0;
+}
+
+.trainer-pok-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.trainer-pok-name {
+    font-weight: bold;
+}
+
+.trainer-pok-level {
+    color: #666;
+    margin-left: 4px;
+}
+
+.trainer-pok-detail {
+    color: #555;
+    font-size: 11px;
+}
+
+.trainer-pok-moves {
+    color: #444;
+    font-size: 11px;
+    margin-top: 1px;
+}
+
 .range-delete-move {
     cursor: pointer;
     background: #ff4444;
