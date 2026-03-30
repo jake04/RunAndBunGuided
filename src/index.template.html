@@ -105,16 +105,36 @@
             </div>
 
             <div class="tracker-column tracker-column-trainers">
-            <div class="trainer-panel">
-                <div class="trainer-panel-header">Trainer Battles</div>
-                <div class="trainer-nav">
-                    <button class="btn btn-small" id="prev-split-btn" onclick="navigateSplit(-1)">&#8592; Prev</button>
-                    <select id="split-select" class="trainer-split-select"></select>
-                    <button class="btn btn-small" id="next-split-btn" onclick="navigateSplit(1)">Next &#8594;</button>
-                    <span class="trainer-defeat-counter" id="split-defeat-counter"></span>
+
+                <!-- Tab switcher -->
+                <div class="right-panel-tabs">
+                    <button class="right-panel-tab active" id="tab-trainers" onclick="switchRightTab('trainers')">Trainer Battles</button>
+                    <button class="right-panel-tab" id="tab-items" onclick="switchRightTab('items')">Items</button>
                 </div>
-                <div id="trainer-content"></div>
-            </div>
+
+                <!-- Trainers panel -->
+                <div id="right-panel-trainers" class="right-panel-section">
+                <div class="trainer-panel">
+                    <div class="trainer-nav">
+                        <button class="btn btn-small" id="prev-split-btn" onclick="navigateSplit(-1)">&#8592; Prev</button>
+                        <select id="split-select" class="trainer-split-select"></select>
+                        <button class="btn btn-small" id="next-split-btn" onclick="navigateSplit(1)">Next &#8594;</button>
+                        <span class="trainer-defeat-counter" id="split-defeat-counter"></span>
+                    </div>
+                    <div id="trainer-content"></div>
+                </div>
+                </div>
+
+                <!-- Items panel -->
+                <div id="right-panel-items" class="right-panel-section" style="display:none">
+                <div class="items-panel">
+                    <div class="items-panel-nav">
+                        <span class="items-collect-counter" id="items-collect-counter"></span>
+                    </div>
+                    <div id="items-content"></div>
+                </div>
+                </div>
+
             </div>
 
             </div>
@@ -1932,6 +1952,7 @@
     <script type="text/javascript" src="./calc/index.js?"></script>
     <script type="text/javascript" src="./js/data/encounters.js?"></script>
     <script type="text/javascript" src="./js/data/trainers.js?"></script>
+    <script type="text/javascript" src="./js/data/items.js?"></script>
     <script type="text/javascript" src="./js/encounter_tracker.js?"></script>
     <script type="text/javascript">
         function toggleTrackerPanel() {
