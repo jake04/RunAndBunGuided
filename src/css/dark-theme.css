@@ -376,6 +376,8 @@ input.select2-input {
 .trainer-defeat-btn { background: #333; border-color: #555; color: #aaa; }
 .trainer-defeat-btn:hover { background: #444; }
 .trainer-defeat-btn.defeated { background: #27ae60; color: #fff; border-color: #27ae60; }
+.trainer-setup-btn { background: #1a2a3a; border-color: #3498db; color: #3498db; }
+.trainer-setup-btn:hover { background: #3498db; color: #fff; }
 
 .trainer-pokemon-row { border-bottom-color: #333; }
 .trainer-pok-name { color: #ddd; }

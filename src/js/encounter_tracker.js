@@ -393,6 +393,18 @@
 
     window.navigateSplit = navigateSplit;
 
+    // ── Setup Battle integration ───────────────────────────────────────────────
+
+    function setupBattle(trainer) {
+        var firstPoke = trainer.pokemon[0];
+        if (!firstPoke || typeof $ === 'undefined') return;
+        var setVal = firstPoke.name + ' (' + trainer.name + ')';
+        var input = $('input.opposing');
+        if (!input.length) return;
+        input.val(setVal).change();
+        $('.opposing .select2-chosen').text(setVal);
+    }
+
     function buildSplitDropdown() {
         if (!trainerData) return;
         var sel = document.getElementById('split-select');
@@ -523,6 +535,15 @@
             nameArea.appendChild(tagDbl);
         }
 
+        var setupBtn = document.createElement('button');
+        setupBtn.className = 'trainer-setup-btn';
+        setupBtn.textContent = 'Setup Battle';
+        setupBtn.title = 'Load ' + (trainer.pokemon[0] ? trainer.pokemon[0].name : '') + ' into Pokémon 2';
+        setupBtn.addEventListener('click', function (ev) {
+            ev.stopPropagation();
+            setupBattle(trainer);
+        });
+
         var defeatBtn = document.createElement('button');
         defeatBtn.className = 'trainer-defeat-btn' + (isDefeated ? ' defeated' : '');
         defeatBtn.textContent = isDefeated ? '\u2714 Defeated' : 'Mark Defeated';
@@ -532,7 +553,11 @@
         });
 
         cardHeader.appendChild(nameArea);
-        cardHeader.appendChild(defeatBtn);
+        var btnGroup = document.createElement('div');
+        btnGroup.className = 'trainer-btn-group';
+        btnGroup.appendChild(setupBtn);
+        btnGroup.appendChild(defeatBtn);
+        cardHeader.appendChild(btnGroup);
         card.appendChild(cardHeader);
 
         // Pokemon list

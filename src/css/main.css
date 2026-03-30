@@ -1025,6 +1025,29 @@ button svg {
     border-color: #27ae60;
 }
 
+.trainer-btn-group {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.trainer-setup-btn {
+    font-size: 11px;
+    padding: 2px 10px;
+    border: 1px solid #3498db;
+    border-radius: 3px;
+    background: #fff;
+    color: #3498db;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.trainer-setup-btn:hover {
+    background: #3498db;
+    color: #fff;
+}
+
 .trainer-card.trainer-defeated {
     opacity: 0.55;
 }
