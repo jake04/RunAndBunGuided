@@ -647,27 +647,33 @@
 
     function exportSelections() {
         var lines = [];
+        lines.push('--- Encounter Catches ---');
+        var hasCatches = false;
         for (var i = 0; i < data.routes.length; i++) {
             var route = data.routes[i];
             if (selections[route]) {
                 lines.push(route + ': ' + selections[route]);
+                hasCatches = true;
             }
         }
+        if (!hasCatches) lines.push('(none)');
         // Export trainer defeats
+        lines.push('');
+        lines.push('--- Trainer Defeats ---');
         var defeatKeys = Object.keys(trainerDefeats);
         if (defeatKeys.length > 0) {
-            lines.push('');
-            lines.push('--- Trainer Defeats ---');
             for (var d = 0; d < defeatKeys.length; d++) {
                 lines.push('[defeated] ' + defeatKeys[d]);
             }
+        } else {
+            lines.push('(none)');
         }
         var text = lines.join('\n');
         var blob = new Blob([text], { type: 'text/plain' });
         var url = URL.createObjectURL(blob);
         var a = document.createElement('a');
         a.href = url;
-        a.download = 'encounter-tracker.txt';
+        a.download = 'run-and-bun-tracker.txt';
         a.click();
         URL.revokeObjectURL(url);
     }
