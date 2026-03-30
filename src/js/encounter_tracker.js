@@ -15,6 +15,7 @@
     var data = window.ENCOUNTER_DATA;   // { routes: [...], encounters: {...} }
     var trainerData = window.TRAINER_DATA || null; // { splits, trainersByRoute, routeToSplit }
     var currentIndex = 0;
+    var currentSplitIndex = 0;
     var selections = {};                // { "Route Name": "PokemonName" }
     var trainerDefeats = {};            // { "Route|TrainerName": true }
 
@@ -369,77 +370,123 @@
             content.appendChild(empty);
         }
 
-        // ── Split label on route header ──
-        if (trainerData && trainerData.routeToSplit[routeName]) {
-            var splitLabel = document.createElement('span');
-            splitLabel.className = 'split-label';
-            splitLabel.textContent = trainerData.routeToSplit[routeName];
-            if (nameEl) nameEl.appendChild(splitLabel);
-        }
-
-        // ── Trainer section ──
-        renderTrainerSection(routeName, content);
-
         updateProgressStrip();
         updateCounter();
     }
 
-    // ── Trainer section renderer ──────────────────────────────────────────────
+    // ── Split navigation ──────────────────────────────────────────────────────
 
-    function renderTrainerSection(routeName, container) {
+    function navigateSplit(delta) {
         if (!trainerData) return;
-        var trainers = trainerData.trainersByRoute[routeName];
-        if (!trainers || trainers.length === 0) return;
-
-        // Count defeated
-        var defeatedCount = 0;
-        for (var t = 0; t < trainers.length; t++) {
-            if (trainerDefeats[trainerDefeatKey(routeName, trainers[t].name)]) defeatedCount++;
-        }
-
-        var section = document.createElement('div');
-        section.className = 'trainer-section';
-
-        // Collapsible header
-        var header = document.createElement('div');
-        header.className = 'trainer-section-header';
-        var headerText = document.createElement('span');
-        headerText.textContent = 'Trainer Battles (' + trainers.length + ')';
-        var defeatCounter = document.createElement('span');
-        defeatCounter.className = 'trainer-defeat-counter';
-        defeatCounter.textContent = defeatedCount + ' / ' + trainers.length + ' defeated';
-        var toggleIcon = document.createElement('span');
-        toggleIcon.className = 'trainer-toggle-icon';
-        toggleIcon.textContent = '\u25BC';
-        header.appendChild(headerText);
-        header.appendChild(defeatCounter);
-        header.appendChild(toggleIcon);
-
-        var body = document.createElement('div');
-        body.className = 'trainer-section-body';
-        body.style.display = 'none';
-
-        header.addEventListener('click', function () {
-            var isOpen = body.style.display !== 'none';
-            body.style.display = isOpen ? 'none' : '';
-            toggleIcon.textContent = isOpen ? '\u25BC' : '\u25B2';
-        });
-
-        // Sort: bosses last (they are the climax of the route)
-        var sorted = trainers.slice().sort(function (a, b) {
-            if (a.isBoss && !b.isBoss) return 1;
-            if (!a.isBoss && b.isBoss) return -1;
-            return 0;
-        });
-
-        for (var i = 0; i < sorted.length; i++) {
-            body.appendChild(buildTrainerCard(routeName, sorted[i]));
-        }
-
-        section.appendChild(header);
-        section.appendChild(body);
-        container.appendChild(section);
+        var next = currentSplitIndex + delta;
+        if (next < 0) next = trainerData.splits.length - 1;
+        if (next >= trainerData.splits.length) next = 0;
+        goToSplit(next);
     }
+
+    function goToSplit(index) {
+        currentSplitIndex = index;
+        var sel = document.getElementById('split-select');
+        if (sel) sel.value = String(index);
+        renderSplit(trainerData.splits[index]);
+    }
+
+    window.navigateSplit = navigateSplit;
+
+    function buildSplitDropdown() {
+        if (!trainerData) return;
+        var sel = document.getElementById('split-select');
+        if (!sel) return;
+        sel.innerHTML = '';
+        for (var i = 0; i < trainerData.splits.length; i++) {
+            var opt = document.createElement('option');
+            opt.value = String(i);
+            opt.textContent = trainerData.splits[i];
+            sel.appendChild(opt);
+        }
+        sel.addEventListener('change', function () {
+            goToSplit(parseInt(this.value, 10));
+        });
+    }
+
+    // ── Split renderer ────────────────────────────────────────────────────────
+
+    // Build an ordered list of { route, trainers[] } for a given split,
+    // preserving the CSV row order within each route.
+    function getTrainersForSplit(splitName) {
+        if (!trainerData) return [];
+        var routeGroups = [];
+        var routeMap = {};
+        var allRoutes = Object.keys(trainerData.trainersByRoute);
+        for (var r = 0; r < allRoutes.length; r++) {
+            var route = allRoutes[r];
+            var trainers = trainerData.trainersByRoute[route];
+            for (var t = 0; t < trainers.length; t++) {
+                if (trainers[t].split === splitName) {
+                    if (!routeMap[route]) {
+                        routeMap[route] = [];
+                        routeGroups.push(route);
+                    }
+                    routeMap[route].push(trainers[t]);
+                }
+            }
+        }
+        return routeGroups.map(function (route) {
+            return { route: route, trainers: routeMap[route] };
+        });
+    }
+
+    function renderSplit(splitName) {
+        var container = document.getElementById('trainer-content');
+        if (!container) return;
+        container.innerHTML = '';
+
+        var groups = getTrainersForSplit(splitName);
+        if (groups.length === 0) {
+            var empty = document.createElement('p');
+            empty.className = 'tracker-empty';
+            empty.textContent = 'No trainers for this split.';
+            container.appendChild(empty);
+            updateSplitCounter(splitName, groups);
+            return;
+        }
+
+        for (var g = 0; g < groups.length; g++) {
+            var group = groups[g];
+            var groupEl = document.createElement('div');
+            groupEl.className = 'trainer-route-group';
+
+            var label = document.createElement('div');
+            label.className = 'trainer-route-label';
+            label.textContent = group.route;
+            groupEl.appendChild(label);
+
+            for (var t = 0; t < group.trainers.length; t++) {
+                groupEl.appendChild(buildTrainerCard(group.route, group.trainers[t]));
+            }
+
+            container.appendChild(groupEl);
+        }
+
+        updateSplitCounter(splitName, groups);
+    }
+
+    function updateSplitCounter(splitName, groups) {
+        var el = document.getElementById('split-defeat-counter');
+        if (!el) return;
+        var total = 0;
+        var defeated = 0;
+        for (var g = 0; g < groups.length; g++) {
+            for (var t = 0; t < groups[g].trainers.length; t++) {
+                total++;
+                var key = trainerDefeatKey(groups[g].route, groups[g].trainers[t].name);
+                if (trainerDefeats[key]) defeated++;
+            }
+        }
+        el.textContent = defeated + ' / ' + total + ' defeated';
+    }
+
+    // ── Trainer card builder ──────────────────────────────────────────────────
 
     function buildTrainerCard(routeName, trainer) {
         var key = trainerDefeatKey(routeName, trainer.name);
@@ -550,7 +597,7 @@
             trainerDefeats[key] = true;
         }
         saveDefeats();
-        renderRoute(routeName);
+        renderSplit(trainerData.splits[currentSplitIndex]);
     }
 
     // ── Selection toggle ──────────────────────────────────────────────────────
@@ -566,6 +613,7 @@
         renderRoute(data.routes[currentIndex]);
         buildProgressStrip();
         updateCounter();
+        if (trainerData) renderSplit(trainerData.splits[currentSplitIndex]);
     }
 
     window.resetEncounters = resetAll;
@@ -628,6 +676,7 @@
         renderRoute(data.routes[currentIndex]);
         buildProgressStrip();
         updateCounter();
+        if (trainerData) renderSplit(trainerData.splits[currentSplitIndex]);
     }
 
     function handleImportFile(input) {
@@ -676,6 +725,12 @@
             }
         }
         goToRoute(startIdx);
+
+        // Trainer split panel
+        if (trainerData) {
+            buildSplitDropdown();
+            goToSplit(0);
+        }
     }
 
     if (document.readyState === 'loading') {

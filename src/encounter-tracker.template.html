@@ -44,6 +44,9 @@
         <a class="app-tab active" href="./encounter-tracker.html"><svg class="pokeball-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2" fill="none"/><line x1="1" y1="10" x2="19" y2="10" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="1.2" fill="currentColor"/></svg> Encounter Tracker</a>
     </div>
 
+    <div class="tracker-columns">
+
+    <div class="tracker-column tracker-column-encounters">
     <div class="tracker-container">
 
         <!-- Route navigation bar -->
@@ -71,6 +74,26 @@
             <div class="tracker-progress-label">Route Progress</div>
             <div class="route-progress-strip" id="progress-strip"></div>
         </div>
+
+    </div>
+    </div>
+
+    <div class="tracker-column tracker-column-trainers">
+    <div class="trainer-panel">
+        <div class="trainer-panel-header">Trainer Battles</div>
+
+        <!-- Split navigation bar -->
+        <div class="trainer-nav">
+            <button class="btn btn-small" id="prev-split-btn" onclick="navigateSplit(-1)">&#8592; Prev</button>
+            <select id="split-select" class="trainer-split-select"></select>
+            <button class="btn btn-small" id="next-split-btn" onclick="navigateSplit(1)">Next &#8594;</button>
+            <span class="trainer-defeat-counter" id="split-defeat-counter"></span>
+        </div>
+
+        <!-- Trainer cards (rendered by JS) -->
+        <div id="trainer-content"></div>
+    </div>
+    </div>
 
     </div>
 
